@@ -1,8 +1,10 @@
 ﻿// ReSharper disable UnusedAutoPropertyAccessor.Local
 
 using System.Text.Json.Serialization;
+using ARSoftware.Contpaqi.Api.Common.Interfaces;
+using ARSoftware.Contpaqi.Api.Common.Responses;
 
-namespace ARSoftware.Contpaqi.Api.Common;
+namespace ARSoftware.Contpaqi.Api.Common.Domain;
 
 public sealed class ApiResponse
 {

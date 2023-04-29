@@ -1,8 +1,9 @@
 ﻿using System.Text.Json.Serialization;
+using ARSoftware.Contpaqi.Api.Common.Interfaces;
 
 // ReSharper disable UnusedAutoPropertyAccessor.Local
 
-namespace ARSoftware.Contpaqi.Api.Common;
+namespace ARSoftware.Contpaqi.Api.Common.Domain;
 
 public sealed class ApiRequest
 {
@@ -55,7 +56,7 @@ public sealed class ApiRequest
     /// </summary>
     [JsonInclude]
     [JsonConverter(typeof(JsonStringEnumConverter))]
-    public RequestStatus Status { get; set; } = RequestStatus.Pending;
+    public RequestStatus Status { get; private set; } = RequestStatus.Pending;
 
     /// <summary>
     ///     Respuesta de la solicitud.

@@ -1,4 +1,4 @@
-﻿namespace ARSoftware.Contpaqi.Api.Common;
+﻿namespace ARSoftware.Contpaqi.Api.Common.Interfaces;
 
 public interface IContpaqiResponse
 {

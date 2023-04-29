@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ARSoftware.Contpaqi.Api.Common.Domain;
+using Microsoft.EntityFrameworkCore;
 
-namespace ARSoftware.Contpaqi.Api.Common.Persistence;
+namespace ARSoftware.Contpaqi.Api.Common.Interfaces;
 
 public interface IApplicationDbContext
 {

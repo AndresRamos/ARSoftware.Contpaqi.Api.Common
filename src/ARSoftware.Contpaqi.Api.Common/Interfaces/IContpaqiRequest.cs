@@ -1,6 +1,7 @@
-﻿using MediatR;
+﻿using ARSoftware.Contpaqi.Api.Common.Domain;
+using MediatR;
 
-namespace ARSoftware.Contpaqi.Api.Common;
+namespace ARSoftware.Contpaqi.Api.Common.Interfaces;
 
 public interface IContpaqiRequest : IRequest<ApiResponse>
 {
