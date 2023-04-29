@@ -1,13 +1,13 @@
 ﻿using System.Text.Json.Serialization;
-using ARSoftware.Contpaqi.Api.Common.Interfaces;
-
-// ReSharper disable UnusedAutoPropertyAccessor.Local
 
 namespace ARSoftware.Contpaqi.Api.Common.Domain;
 
+/// <summary>
+///     Request model used by the API.
+/// </summary>
 public sealed class ApiRequest
 {
-    public ApiRequest(string subscriptionKey, string empresaRfc, IContpaqiRequest contpaqiRequest)
+    public ApiRequest(string subscriptionKey, string empresaRfc, ContpaqiRequest contpaqiRequest)
     {
         SubscriptionKey = subscriptionKey;
         EmpresaRfc = empresaRfc;
@@ -49,7 +49,7 @@ public sealed class ApiRequest
     ///     Solicitud CONTPAQi.
     /// </summary>
     [JsonInclude]
-    public IContpaqiRequest ContpaqiRequest { get; private set; }
+    public ContpaqiRequest ContpaqiRequest { get; private set; }
 
     /// <summary>
     ///     Estatus de la solicitud.

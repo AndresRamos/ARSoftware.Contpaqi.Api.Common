@@ -1,14 +1,14 @@
-﻿// ReSharper disable UnusedAutoPropertyAccessor.Local
-
-using System.Text.Json.Serialization;
-using ARSoftware.Contpaqi.Api.Common.Interfaces;
+﻿using System.Text.Json.Serialization;
 using ARSoftware.Contpaqi.Api.Common.Responses;
 
 namespace ARSoftware.Contpaqi.Api.Common.Domain;
 
+/// <summary>
+///     Response model used by the API.
+/// </summary>
 public sealed class ApiResponse
 {
-    public ApiResponse(IContpaqiResponse contpaqiResponse, bool isSuccess, string errorMessage = "")
+    public ApiResponse(ContpaqiResponse contpaqiResponse, bool isSuccess, string errorMessage = "")
     {
         ContpaqiResponseType = contpaqiResponse.GetType().Name;
         ContpaqiResponse = contpaqiResponse;
@@ -44,7 +44,7 @@ public sealed class ApiResponse
     ///     Respuesta CONTPAQi.
     /// </summary>
     [JsonInclude]
-    public IContpaqiResponse ContpaqiResponse { get; private set; }
+    public ContpaqiResponse ContpaqiResponse { get; private set; }
 
     /// <summary>
     ///     Mensaje de error.
@@ -58,18 +58,33 @@ public sealed class ApiResponse
     [JsonInclude]
     public long ExecutionTime { get; set; }
 
-    public static ApiResponse CreateSuccessfull(IContpaqiResponse contpaqiResponse)
+    /// <summary>
+    ///     Creates a successfull response.
+    /// </summary>
+    /// <param name="contpaqiResponse">CONTPAQi Response.</param>
+    /// <returns>An API Response with the CONTPAQi Response as model.</returns>
+    public static ApiResponse CreateSuccessfull(ContpaqiResponse contpaqiResponse)
     {
         return new ApiResponse(contpaqiResponse, true);
     }
 
-    public static ApiResponse CreateFailed(string errorMessage)
+    /// <summary>
+    ///     Creates a failed response.
+    /// </summary>
+    /// <param name="exception">Exception</param>
+    /// <returns>An API response with the Exception message as model.</returns>
+    public static ApiResponse CreateFailed(Exception exception)
     {
-        return new ApiResponse(new EmptyContpaqiResponse(), false, errorMessage);
+        return new ApiResponse(new ErrorContpaqiResponse(exception.ToString()), false, exception.Message);
     }
 
-    public static ApiResponse CreateSuccessfull<TReponse, TModel>(TModel model) where TReponse : IContpaqiResponse<TModel>, new()
+    /// <summary>
+    ///     Creates a failed response.
+    /// </summary>
+    /// <param name="errorMessage">Error message.</param>
+    /// <returns>An API response with the error message as model.</returns>
+    public static ApiResponse CreateFailed(string errorMessage)
     {
-        return new ApiResponse(new TReponse { Model = model }, true);
+        return new ApiResponse(new ErrorContpaqiResponse(errorMessage), false, errorMessage);
     }
 }

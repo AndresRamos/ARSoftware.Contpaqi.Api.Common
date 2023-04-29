@@ -3,11 +3,11 @@
 namespace ARSoftware.Contpaqi.Api.Common.Responses;
 
 /// <summary>
-///     Empty response.
+///     Error response.
 /// </summary>
-public sealed class EmptyContpaqiResponse : ContpaqiResponse<string>
+public class ErrorContpaqiResponse : ContpaqiResponse<string>
 {
-    public EmptyContpaqiResponse() : base("")
+    public ErrorContpaqiResponse(string error) : base(error)
     {
     }
 }
