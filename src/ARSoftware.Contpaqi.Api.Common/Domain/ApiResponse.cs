@@ -35,7 +35,7 @@ public sealed class ApiResponse
     public bool IsSuccess { get; private set; }
 
     /// <summary>
-    ///     Tipo de respuesta CONTPAQi
+    ///     Tipo de respuesta CONTPAQi.
     /// </summary>
     [JsonInclude]
     public string ContpaqiResponseType { get; private set; }

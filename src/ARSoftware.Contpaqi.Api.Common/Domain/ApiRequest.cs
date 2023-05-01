@@ -40,7 +40,7 @@ public sealed class ApiRequest
     public DateTimeOffset DateCreated { get; private set; } = DateTimeOffset.Now;
 
     /// <summary>
-    ///     Tipo de solicitud CONTPAQi
+    ///     Tipo de solicitud CONTPAQi.
     /// </summary>
     [JsonInclude]
     public string ContpaqiRequestType { get; private set; }
