@@ -16,6 +16,7 @@
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>CONTPAQi API;</PackageTags>
 		<Description>Este paquete contiene las clases comunes para el consumo de los servicios de las APIs de CONTPAQi.</Description>
+		<PackageIcon>AR_LOGO03_128_128.jpg</PackageIcon>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -27,6 +28,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Include="..\..\images\AR_LOGO03_128_128.jpg">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	  <None Include="..\..\README.md">
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>
