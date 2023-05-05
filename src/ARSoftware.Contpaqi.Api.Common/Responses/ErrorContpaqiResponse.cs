@@ -7,7 +7,11 @@ namespace ARSoftware.Contpaqi.Api.Common.Responses;
 /// </summary>
 public class ErrorContpaqiResponse : ContpaqiResponse<string>
 {
-    public ErrorContpaqiResponse(string error) : base(error)
+    /// <summary>
+    ///     Instantiates a new error response.
+    /// </summary>
+    /// <param name="model">Error message.</param>
+    public ErrorContpaqiResponse(string model) : base(model)
     {
     }
 }
