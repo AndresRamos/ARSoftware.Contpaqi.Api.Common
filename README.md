@@ -7,7 +7,8 @@ Este paquete contiene las clases comunes para el consumo de los servicios de las
 * [AR Software - CONTPAQi Contabilidad API](https://github.com/AndresRamos/ARSoftware.Contpaqi.Contabilidad.Api)
 * [AR Software - CONTPAQi Nominas API](https://github.com/AndresRamos/ARSoftware.Contpaqi.Nominas.Api)
 
-## Instalación
+## InstalaciÃ³n
+Puedes instalar este paquete utilizando [NuGet](https://www.nuget.org/packages/ARSoftware.Contpaqi.Api.Common/)
 ```
 dotnet add package ARSoftware.Contpaqi.Common
 ```
